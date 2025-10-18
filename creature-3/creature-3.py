@@ -8,10 +8,13 @@ class Tiny:
         self.vel = py5.Py5Vector(py5.random(-2, 2), py5.random(-2, 2))
 
     def move(self):
+        # define hitbox size
         hitbox = self.size
 
+        # tiny moves in random direction upon spawn
         self.pos += self.vel
 
+        # if the mouse hovers over the tiny, the direction of movement changes
         if (py5.mouse_x > self.pos.x - hitbox and py5.mouse_x < self.pos.x + hitbox):
             if (py5.mouse_y >= self.pos.y - hitbox and py5.mouse_y < self.pos.y + hitbox):
                 self.vel = py5.Py5Vector(py5.random(-2, 2), py5.random(-2, 2))
