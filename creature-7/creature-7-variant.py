@@ -62,25 +62,20 @@ class Interest:
             py5.sphere(self.size)
             py5.pop_matrix()
 
-interests = []
-
 def setup():
     global interest, rotation_angle
     py5.size(800, 800, py5.P3D)
 
+def draw():
+    py5.background(0)
     y_init_rotate = 0
     radius = 50
 
     for i in range(total_rings):
         interest = Interest(y_init_rotate, radius, int(py5.random(8, 16)), py5.random(2, 3))
-        interests.append(interest)
-        radius = radius + py5.random(5, 40)
-        y_init_rotate += py5.PI / total_rings * py5.random(10, 100)
-
-def draw():
-    py5.background(0)
-    for interest in interests:
         interest.make()
+        radius = radius + 30
+        y_init_rotate += py5.PI / total_rings
 
     py5.fill(255)
     py5.ellipse(py5.width / 2, py5.height / 2, 40, 40)
