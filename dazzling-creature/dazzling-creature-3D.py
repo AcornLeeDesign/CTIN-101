@@ -45,7 +45,7 @@ import py5
 import random
 
 # Global
-total_simons = 10
+total_simons = 20
 
 class Simon:
     def __init__(self, x=None, y=None, z=0, speed=None, amplitude=(py5.height * 0.15), frequency=0.05, color=255, body_size=5):
@@ -56,7 +56,7 @@ class Simon:
             x = py5.width / 2 + py5.random(0, 0.4 * py5.width) # randomize the starting y a bit
         self.pos = py5.Py5Vector(x, y, z)
         if speed is None:
-            speed = random.choice([-1, 1])  # randomize if it moves left or right at the start
+            speed = random.choice([-4, 4])  # randomize if it moves left or right at the start
         self.speed = speed
         self.amplitude = amplitude
         self.frequency = frequency
@@ -143,12 +143,12 @@ class Simon:
 simons = []
 
 def setup():
-    py5.size(800, 800, py5.P3D)
+    py5.size(1600, 800, py5.P3D)
     
     z = 0
-    body_size = 50
+    body_size = 100
     amplitude = py5.height * 0.15
-    frequency = 0.05
+    frequency = 0.02
     color = 255
 
     for i in range(total_simons):
