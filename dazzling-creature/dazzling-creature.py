@@ -45,9 +45,9 @@ class Simon:
 
         # BODY
         py5.fill(255)
-        py5.sphere(body_size / 2)
+        py5.ellipse(0, 0, body_size, body_size)
 
-        # EYES
+        # --- EYES ---
         py5.fill(0)
         # Size
         eye_size = body_size * 0.2
@@ -58,7 +58,7 @@ class Simon:
 
         py5.rect(r_eye_x, eye_y, eye_size, eye_size, corner_radius)     # right eye
         py5.rect(l_eye_x, eye_y, eye_size, eye_size, corner_radius)     # left eye
-
+        
         # ARMS
         py5.fill(255)
         # Size
